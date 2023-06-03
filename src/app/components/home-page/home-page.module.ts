@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeBackgroundComponent } from './home-background/home-background.component';
+import { HomePageRoutingModule } from './home-page-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { HomeBackgroundComponent } from './home-background/home-background.compo
     HomeBackgroundComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, 
+    HomePageRoutingModule
   ], 
   exports: [
     HomeBackgroundComponent

@@ -13,13 +13,14 @@ export class CarsService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get<Car[]>(`${this.urlBase}/GetAll`, { responseType: 'json' }).pipe(
+    return this.http.get<Car[]>(`${this.urlBase}GetAllCars`, { responseType: 'json' }).pipe(
       catchError((err: HttpErrorResponse) => {
         console.log("1");
         if (err.status === 498) {
           console.log("2");
           throw "Token inválido";
         } else {
+          console.log(err);
           throw "Ops algo deu errado";
         }
       })

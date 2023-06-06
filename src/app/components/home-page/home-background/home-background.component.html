@@ -1,9 +1,8 @@
-<p>home-background works!</p>
 
 <button (click)="logar()"> Logar primeiro!! </button>
 
 <button (click)="showAllCars()"> Teste de API!! </button>
 
-<p *ngFor="let car of carsToShow">
+<p *ngFor="let car of carsToShow" #paragraph>
     {{car.Nome}}
 </p>

@@ -8,12 +8,12 @@ import { Car } from '../entities/car';
 })
 export class CarsService {
 
-  urlBase = "http://127.0.0.1:8080/"
+  urlBase = "http://127.0.0.1:8080"
 
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get<Car[]>(`${this.urlBase}GetAllCars`, { responseType: 'json' }).pipe(
+    return this.http.get<Car[]>(`${this.urlBase}/GetAllCars`, { responseType: 'json' }).pipe(
       catchError((err: HttpErrorResponse) => {
         console.log("1");
         if (err.status === 498) {

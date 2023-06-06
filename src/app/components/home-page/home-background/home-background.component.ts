@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Car } from 'src/app/entities/car';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { CarsService } from 'src/app/services/cars.service';
@@ -11,6 +11,7 @@ import { CarsService } from 'src/app/services/cars.service';
 export class HomeBackgroundComponent {
 
   carsToShow!: Car[];
+  @ViewChildren("paragraph") paragraphs!: QueryList<ElementRef<HTMLParagraphElement>>;
 
   constructor(
     private carService: CarsService, 
